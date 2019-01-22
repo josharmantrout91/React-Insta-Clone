@@ -71,7 +71,7 @@ const SearchBarContainer = props => {
       </SearchBarLeft>
 
       <SearchBarCenter>
-        <SearchInput />
+        <SearchInput onKeyDown={props.searchUserPosts} />
         {/* <input type= "text" placeholder= "Search" /> */}
       </SearchBarCenter>
 
