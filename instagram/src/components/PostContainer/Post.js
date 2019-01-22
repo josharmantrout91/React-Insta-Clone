@@ -1,10 +1,11 @@
-import React from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import CommentsSection from "../CommentsSection/CommentsSection";
 import PostLikes from "./PostLikes";
 import PostBanner from "./PostBanner";
+import styled from "styled-components";
 
-class Post extends React.Component {
+class Post extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,27 +14,27 @@ class Post extends React.Component {
   }
 
   likesCounter = () => {
-    const newLikesAmt = this.state.likes + 1;
+    let newLikesAmt = this.state.likes + 1;
     this.setState({ likes: newLikesAmt });
   };
 
   render() {
     return (
-      <div className="post-wrapper">
+      <div className="post-container">
         <PostBanner
           username={this.props.post.username}
-          thumbnailURL={this.props.post.thumbnailURL}
+          thumbnailUrl={this.props.post.thumbnailUrl}
         />
         <div className="post-main-img">
           <img
             className="post-img"
-            src={this.props.post.imageURL}
-            alt="post image thumbnail"
+            src={this.props.post.imageUrl}
+            alt="main post content"
           />
         </div>
-        <PostLikes likesPlusOne={this.likesCounter} likes={this.state.likes} />
+        <PostLikes likes={this.state.likes} likesPlusOne={this.likesCounter} />
         <CommentsSection
-          postID={this.props.post.imageURL}
+          postID={this.props.post.imageUrl}
           comments={this.props.post.comments}
         />
       </div>
@@ -44,8 +45,8 @@ class Post extends React.Component {
 Post.propTypes = {
   post: PropTypes.shape({
     username: PropTypes.string,
-    thumbnailURL: PropTypes.string,
-    imageURL: PropTypes.string
+    thumbnailUrl: PropTypes.string,
+    imageUrl: PropTypes.string
   })
 };
 
