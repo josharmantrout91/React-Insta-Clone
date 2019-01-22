@@ -1,16 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import CommentsSection from "../CommentsSection/CommentsSection";
 import PostLikes from "./PostLikes";
 import PostBanner from "./PostBanner";
 
-class Post extends Component {
+class Post extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       likes: props.post.likes
     };
   }
+
   likesCounter = () => {
     const newLikesAmt = this.state.likes + 1;
     this.setState({ likes: newLikesAmt });
@@ -39,5 +40,13 @@ class Post extends Component {
     );
   }
 }
+
+Post.propTypes = {
+  post: PropTypes.shape({
+    username: PropTypes.string,
+    thumbnailURL: PropTypes.string,
+    imageURL: PropTypes.string
+  })
+};
 
 export default Post;

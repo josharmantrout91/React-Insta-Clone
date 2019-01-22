@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import dummyData from "../../dummy-data";
 import PostContainer from "./PostContainer";
-import SearchBarContainer from "./components/SearchBar/SearchBarContainer";
+import SearchBarContainer from "../SearchBar/SearchBarContainer";
 
 class PostsPage extends Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class PostsPage extends Component {
         return post;
       }
     });
-    this.setState({ filteredPosts: posts });
+    this.setState({ searchResults: posts });
   };
 
   render() {
@@ -31,8 +31,8 @@ class PostsPage extends Component {
         <SearchBarContainer searchUserPosts={this.searchPostsHandler} />
         <PostContainer
           posts={
-            this.state.filteredPosts.length > 0
-              ? this.state.filteredPosts
+            this.state.searchResults.length > 0
+              ? this.state.searchResults
               : this.state.posts
           }
         />

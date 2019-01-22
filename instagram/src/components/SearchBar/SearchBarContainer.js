@@ -42,11 +42,9 @@ const SearchBarCenter = styled.div`
 `;
 
 const SearchInput = styled.input`
-type= "text";
-placeholder= "Search";
-height: 30%;
-width: 100%;
-border-radius: 5px;
+  height: 30%;
+  width: 100%;
+  border-radius: 5px;
 `;
 
 const SearchBarRight = styled.div`
@@ -71,7 +69,11 @@ const SearchBarContainer = props => {
       </SearchBarLeft>
 
       <SearchBarCenter>
-        <SearchInput onKeyDown={props.searchUserPosts} />
+        <SearchInput
+          type="text"
+          placeholder="Search"
+          onKeyDown={props.searchUserPosts}
+        />
         {/* <input type= "text" placeholder= "Search" /> */}
       </SearchBarCenter>
 
