@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import "../SearchBar/SearchBar.css";
+import PropTypes from "prop-types";
 
 const StyledSearchBar = styled.div`
   border-bottom: 1px solid #e6e6e6;
@@ -8,7 +9,7 @@ const StyledSearchBar = styled.div`
   height: 80px;
   line-height: 70px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
 `;
 
 const SearchBarLeft = styled.div`
@@ -17,11 +18,12 @@ const SearchBarLeft = styled.div`
 `;
 
 const SearchBarLogo = styled.div`
-  padding-top: 7px;
+  padding-top: 10px;
 `;
 
 const SearchBarTitle = styled.div`
   margin-left: 20px;
+  padding-top: 16px;
 `;
 
 const Divider = styled.div`
@@ -90,6 +92,10 @@ const SearchBarContainer = props => {
       </SearchBarRight>
     </StyledSearchBar>
   );
+};
+
+SearchBarContainer.propTypes = {
+  searchUserPosts: PropTypes.func
 };
 
 export default SearchBarContainer;

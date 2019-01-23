@@ -28,7 +28,7 @@ const PostBanner = props => {
         <img
           className="post-thumbnail"
           src={props.thumbnailUrl}
-          alt="post banner image"
+          alt="post banner"
         />
       </WrapThumbnail>
       <Uname>{props.username}</Uname>
@@ -36,7 +36,7 @@ const PostBanner = props => {
   );
 };
 
-PostBanner.PropTypes = {
+PostBanner.propTypes = {
   thumbnailUrl: PropTypes.string,
   username: PropTypes.string
 };
