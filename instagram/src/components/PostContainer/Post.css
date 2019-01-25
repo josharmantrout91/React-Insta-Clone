@@ -1,0 +1,13 @@
+.post-thumbnail {
+  height: 100%;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.post-img {
+  width: 100%;
+}
+
+.fa-comment {
+  margin-left: 20px;
+}
